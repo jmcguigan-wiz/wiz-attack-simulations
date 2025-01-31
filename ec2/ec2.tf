@@ -84,15 +84,6 @@ resource "aws_instance" "wiz_instance" {
               export PIPX_HOME="/opt/pipx"
               pipx install pacu
 
-              # Configure aws profile - Required for stratus
-              mkdir -p /home/ubuntu/.aws
-              cat <<EOT >> /home/ubuntu/.aws/config
-              [default]
-              role_arn = ${aws_iam_role.wiz_ec2_role.arn}
-              credential_source = Ec2InstanceMetadata
-              region = ${var.aws_region}
-              EOT
-
               # 
               cat <<EOT >> /home/ubuntu/.bashrc
               export AWS_PAGER=""
