@@ -45,11 +45,3 @@ variable "public_key" {
   type        = string
   default     = ""
 }
-# variable "sensor_pullkey_username" {
-#   type = string
-#   sensitive = true
-# }
-# variable "sensor_pullkey_password" {
-#   type = string
-#   sensitive = true
-# }
